@@ -1,0 +1,36 @@
+#first_name{
+    width: 30rem;
+}
+
+#last_name{
+    width: 30rem;
+}
+
+#email{
+    width: 30rem;
+}
+
+#birthday{
+    width: 30rem;
+}
+
+#password{
+    width: 30rem;
+}
+
+#password_confirm{
+    width: 30rem;
+}
+
+button{
+    width: 15rem;
+    margin: 3rem auto;
+}
+
+#email_login{
+    width: 30rem;
+}
+
+#password_login{
+    width: 30rem;
+}
