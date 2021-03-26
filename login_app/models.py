@@ -35,12 +35,13 @@ class UserManager(models.Manager):
     def login_validator(self, post_data):
         errors_login = {}
         user = User.objects.filter(email=post_data['email_login'])
-        if user == 0:
+        if len(user) == 0:
             errors_login["email_login"] = "No user associated with that email!"
-        logged_user = user[0]
-        user_password = logged_user.password
-        if not bcrypt.checkpw(post_data['password_login'].encode(), user_password.encode()):
-            errors_login["password_login"] = "Password does not match the one on file!"
+        else:
+            logged_user = user[0]
+            user_password = logged_user.password
+            if not bcrypt.checkpw(post_data['password_login'].encode(), user_password.encode()):
+                errors_login["password_login"] = "Password does not match the one on file!"
         return errors_login
 
 class User(models.Model):
